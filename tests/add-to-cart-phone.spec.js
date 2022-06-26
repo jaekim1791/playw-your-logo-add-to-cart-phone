@@ -15,8 +15,8 @@ test.describe("ADD PRODUCT TO CART - PHONE (PORTRAIT)", () => {
     await fancybox.locator("#add_to_cart").click();
 
     const checkout = page.locator("//a[@title='Proceed to checkout']");
-    // Infinite wait for 'Proceed to checkout' button w/o short delay
     await checkout.waitFor();
+    // Without short delay there's an infinite wait for 'Proceed to checkout' button to appear.
     await delay(500);
     await page.locator("a[title='Proceed to checkout']").click();
 
